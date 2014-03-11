@@ -15,6 +15,7 @@
 
 
 /**
- * Events
+ * Event subscribers
  */
-$GLOBALS['TL_EVENT_SUBSCRIBERS']['avisota-subscription-log']    = 'Avisota\Contao\Core\SubscriptionLogger';
+$GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Subscription\SubscriptionLogger';
+$GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Subscription\DataContainer\OptionsBuilder';
