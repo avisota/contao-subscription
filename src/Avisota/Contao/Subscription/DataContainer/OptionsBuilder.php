@@ -15,16 +15,6 @@
 
 namespace Avisota\Contao\Subscription\DataContainer;
 
-use Avisota\Contao\Core\Event\CollectSubscriptionListsEvent;
-use Contao\Doctrine\ORM\EntityHelper;
-use ContaoCommunityAlliance\Contao\Bindings\ContaoEvents;
-use ContaoCommunityAlliance\Contao\Bindings\Events\Controller\LoadDataContainerEvent;
-use ContaoCommunityAlliance\Contao\Bindings\Events\System\LoadLanguageFileEvent;
-use ContaoCommunityAlliance\Contao\Events\CreateOptions\CreateOptionsEvent;
-use DcGeneral\Contao\Compatibility\DcCompat;
-use DcGeneral\DC_General;
-use DcGeneral\Factory\DcGeneralFactory;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class OptionsBuilder implements EventSubscriberInterface

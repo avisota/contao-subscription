@@ -19,3 +19,10 @@
  */
 $GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Subscription\SubscriptionLogger';
 $GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Subscription\DataContainer\OptionsBuilder';
+
+/**
+ * Entities
+ */
+$GLOBALS['DOCTRINE_ENTITIES'][] = 'orm_avisota_blacklist';
+$GLOBALS['DOCTRINE_ENTITIES'][] = 'orm_avisota_subscription';
+$GLOBALS['DOCTRINE_ENTITIES'][] = 'orm_avisota_subscription_log';

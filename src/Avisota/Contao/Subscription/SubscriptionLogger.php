@@ -15,12 +15,12 @@
 
 namespace Avisota\Contao\Subscription;
 
-use Avisota\Contao\Core\Event\ConfirmSubscriptionEvent;
+use Avisota\Contao\Subscription\Event\ConfirmSubscriptionEvent;
 use Avisota\Contao\Core\Event\CreateRecipientEvent;
 use Avisota\Contao\Core\Event\RecipientEvent;
 use Avisota\Contao\Core\Event\RemoveRecipientEvent;
-use Avisota\Contao\Core\Event\SubscribeEvent;
-use Avisota\Contao\Core\Event\UnsubscribeEvent;
+use Avisota\Contao\Subscription\Event\SubscribeEvent;
+use Avisota\Contao\Subscription\Event\UnsubscribeEvent;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -32,11 +32,11 @@ class SubscriptionLogger implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			SubscribeEvent::NAME           => 'subscribe',
-			ConfirmSubscriptionEvent::NAME => 'confirm',
-			UnsubscribeEvent::NAME         => 'unsubscribe',
-			CreateRecipientEvent::NAME     => 'create',
-			RemoveRecipientEvent::NAME     => 'remove',
+			SubscriptionEvents::SUBSCRIBE            => 'subscribe',
+			SubscriptionEvents::CONFIRM_SUBSCRIPTION => 'confirm',
+			SubscriptionEvents::UNSUBSCRIBE          => 'unsubscribe',
+			CreateRecipientEvent::NAME               => 'create',
+			RemoveRecipientEvent::NAME               => 'remove',
 		);
 	}
 
