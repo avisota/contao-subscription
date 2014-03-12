@@ -63,4 +63,16 @@ class SubscriptionEvents
 	 * @api
 	 */
 	const RESOLVE_RECIPIENT = 'avisota.subscription.resolve-recipient';
+
+	/**
+	 * The PREPARE_SUBSCRIPTION event occurs before the subscription get persisted.
+	 *
+	 * This event allow you to manipulate the subscription object before it get stored into the database.
+	 * The event listener method receives a Avisota\Contao\Subscription\Event\PrepareSubscriptionEvent instance.
+	 *
+	 * @var string
+	 *
+	 * @api
+	 */
+	const PREPARE_SUBSCRIPTION = 'avisota.subscription.prepare-subscription';
 }

@@ -27,7 +27,12 @@ class SubscribeEvent extends Event
 	 */
 	protected $subscription;
 
-	function __construct(Subscription $subscription)
+	/**
+	 * @var int
+	 */
+	protected $options;
+
+	function __construct(Subscription $subscription, $options)
 	{
 		$this->list = $subscription;
 	}
@@ -38,5 +43,13 @@ class SubscribeEvent extends Event
 	public function getSubscription()
 	{
 		return $this->list;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOptions()
+	{
+		return $this->options;
 	}
 }

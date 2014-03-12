@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 			'default' => array
 			(
 				'class'  => 'Contao\Doctrine\ORM\DataContainer\General\EntityDataProvider',
-				'source' => 'orm_avisota_recipient_subscription'
+				'source' => 'orm_avisota_subscription'
 			),
 		),
 	),
@@ -65,7 +65,7 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 		(
 			'show' => array
 			(
-				'label' => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['show'],
+				'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['show'],
 				'href'  => 'act=show',
 				'icon'  => 'show.gif'
 			),
@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 	// Fields
 	'fields'     => array
 	(
-		'id'            => array(
+		'id'              => array(
 			'field' => array(
 				'id'      => true,
 				'type'    => 'string',
@@ -82,43 +82,43 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 				'options' => array('fixed' => true),
 			)
 		),
-		'createdAt'     => array(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['createdAt'],
+		'createdAt'       => array(
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['createdAt'],
 			'field' => array(
 				'type'          => 'datetime',
 				'nullable'      => true,
 				'timestampable' => array('on' => 'create')
 			),
 		),
-		'updatedAt'     => array(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['updatedAt'],
+		'updatedAt'       => array(
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['updatedAt'],
 			'field' => array(
 				'type'          => 'datetime',
 				'nullable'      => true,
 				'timestampable' => array('on' => 'update')
 			),
 		),
-		'recipientType' => array
+		'recipientType'   => array
 		(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['recipient'],
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['recipient'],
 			'field' => array(
 				'key'    => true,
 				'type'   => 'text',
 				'length' => '512',
 			),
 		),
-		'recipientId'   => array
+		'recipientId'     => array
 		(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['recipient'],
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['recipient'],
 			'field' => array(
 				'key'    => true,
 				'type'   => 'text',
 				'length' => '512',
 			),
 		),
-		'mailingList'   => array
+		'mailingList'     => array
 		(
-			'label'     => &$GLOBALS['TL_LANG']['orm_avisota_recipient_subscription']['mailingList'],
+			'label'     => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['mailingList'],
 			'manyToOne' => array(
 				'index'        => true,
 				'targetEntity' => 'Avisota\Contao\Entity\Message',
@@ -126,10 +126,37 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 				'inversedBy'   => 'subscriptions',
 				'joinColumns'  => array(
 					array(
-						'name'                 => 'mailing_list',
+						'name'                 => 'mailingList',
 						'referencedColumnName' => 'id',
+						'nullable'             => true,
 					)
 				)
+			),
+		),
+		'active'          => array
+		(
+			'label'   => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['active'],
+			'default' => false,
+			'field'   => array(
+				'type' => 'boolean',
+			),
+		),
+		'activationToken' => array
+		(
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['activationToken'],
+			'field' => array(
+				'type'     => 'string',
+				'length'   => '32',
+				'options'  => array('fixed' => true),
+				'nullable' => true,
+			),
+		),
+		'activatedOn'     => array
+		(
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_subscription']['activatedOn'],
+			'field' => array(
+				'type'     => 'datetime',
+				'nullable' => true,
 			),
 		),
 	)

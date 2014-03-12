@@ -15,25 +15,21 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
+use Avisota\Contao\Entity\Recipient;
 use Avisota\Contao\Entity\Subscription;
-use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
+use Avisota\Recipient\RecipientInterface;
 use Symfony\Component\EventDispatcher\Event;
 
-class ResolveRecipientEvent extends Event
+class PrepareSubscriptionEvent extends Event
 {
 	/**
 	 * @var Subscription
 	 */
 	protected $subscription;
 
-	/**
-	 * @var SubscriptionRecipientInterface|null
-	 */
-	protected $recipient;
-
 	function __construct(Subscription $subscription)
 	{
-		$this->subscription = $subscription;
+		$this->list = $subscription;
 	}
 
 	/**
@@ -41,23 +37,6 @@ class ResolveRecipientEvent extends Event
 	 */
 	public function getSubscription()
 	{
-		return $this->subscription;
-	}
-
-	/**
-	 * @param SubscriptionRecipientInterface|null $recipient
-	 */
-	public function setRecipient(SubscriptionRecipientInterface $recipient = null)
-	{
-		$this->recipient = $recipient;
-		return $this;
-	}
-
-	/**
-	 * @return SubscriptionRecipientInterface|null
-	 */
-	public function getRecipient()
-	{
-		return $this->recipient;
+		return $this->list;
 	}
 }

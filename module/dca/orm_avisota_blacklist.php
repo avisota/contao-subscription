@@ -22,28 +22,53 @@ $GLOBALS['TL_DCA']['orm_avisota_blacklist'] = array
 (
 	// Entity
 	'entity' => array(
-		'idGenerator' => \Doctrine\ORM\Mapping\ClassMetadataInfo::GENERATOR_TYPE_NONE
+		'idGenerator' => \Doctrine\ORM\Mapping\ClassMetadataInfo::GENERATOR_TYPE_UUID
 	),
 	// Fields
 	'fields' => array
 	(
-		'email' => array
-		(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_blacklist']['email'],
+		'id'            => array(
 			'field' => array(
-				'id' => true,
-				'type'   => 'string',
-				'length' => 32
+				'id'      => true,
+				'type'    => 'string',
+				'length'  => '32',
+				'options' => array('fixed' => true),
 			)
 		),
-		'list'  => array
+		'recipientType'      => array
 		(
-			'label' => &$GLOBALS['TL_LANG']['orm_avisota_blacklist']['list'],
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_blacklist']['recipientType'],
 			'field' => array(
-				'id' => true,
-				'type'   => 'string',
-				'length' => 64
-			)
+				'key'    => true,
+				'type'   => 'text',
+				'length' => '512',
+			),
+		),
+		'recipientEmailHash' => array
+		(
+			'label' => &$GLOBALS['TL_LANG']['orm_avisota_blacklist']['recipientEmailHash'],
+			'field' => array(
+				'key'    => true,
+				'type'   => 'text',
+				'length' => '512',
+			),
+		),
+		'mailingList'        => array
+		(
+			'label'     => &$GLOBALS['TL_LANG']['orm_avisota_blacklist']['mailingList'],
+			'manyToOne' => array(
+				'index'        => true,
+				'targetEntity' => 'Avisota\Contao\Entity\Message',
+				'cascade'      => array('persist', 'detach', 'merge', 'refresh'),
+				'inversedBy'   => 'blacklists',
+				'joinColumns'  => array(
+					array(
+						'name'                 => 'mailingList',
+						'referencedColumnName' => 'id',
+						'nullable'             => true,
+					)
+				)
+			),
 		),
 	)
 );

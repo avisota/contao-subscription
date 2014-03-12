@@ -18,39 +18,13 @@
  * Define subscription managers
  */
 
-$container['avisota.subscription.managers'] = new ArrayObject();
-
 $container['avisota.subscription'] = $container->share(
 	function ($container) {
-		$chain = new \Avisota\Contao\Core\Subscription\RootSubscriptionManager();
-
-		foreach ($container['avisota.subscription.managers'] as $subscriptionManager) {
-			$priority = 0;
-
-			// priority support
-			if (is_array($subscriptionManager) && count($subscriptionManager) == 2 && is_int($subscriptionManager[1])) {
-				list($subscriptionManager, $priority) = $subscriptionManager;
-			}
-
-			// factory support
-			if (is_callable($subscriptionManager)) {
-				$subscriptionManager = call_user_func($subscriptionManager);
-			}
-
-			// service support
-			if (is_string($subscriptionManager) && isset($container[$subscriptionManager])) {
-				$subscriptionManager = $container[$subscriptionManager];
-			}
-
-			// instanciate class
-			if (is_string($subscriptionManager)) {
-				$subscriptionManager = new $subscriptionManager();
-			}
-
-			$chain->addSubscriptionManager($subscriptionManager, $priority);
-		}
-
-		return $chain;
+		$subscriptionManager = new \Avisota\Contao\Core\Subscription\SubscriptionManager();
+		$subscriptionManager->setEntityManager($container['doctrine.orm.entityManager']);
+		$subscriptionManager->setEventDispatcher($container['event-dispatcher']);
+		$subscriptionManager->setLogger($container['avisota.logger.subscription']);
+		return $subscriptionManager;
 	}
 );
 
