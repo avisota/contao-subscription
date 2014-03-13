@@ -16,9 +16,9 @@
 namespace Avisota\Contao\Subscription;
 
 use Avisota\Contao\Subscription\Event\ConfirmSubscriptionEvent;
-use Avisota\Contao\Core\Event\CreateRecipientEvent;
-use Avisota\Contao\Core\Event\RecipientEvent;
-use Avisota\Contao\Core\Event\RemoveRecipientEvent;
+use Avisota\Contao\SubscriptionRecipient\Event\CreateRecipientEvent;
+use Avisota\Contao\SubscriptionRecipient\Event\RecipientAwareEvent;
+use Avisota\Contao\SubscriptionRecipient\Event\RemoveRecipientEvent;
 use Avisota\Contao\Subscription\Event\SubscribeEvent;
 use Avisota\Contao\Subscription\Event\UnsubscribeEvent;
 use Psr\Log\LoggerInterface;
@@ -35,8 +35,6 @@ class SubscriptionLogger implements EventSubscriberInterface
 			SubscriptionEvents::SUBSCRIBE            => 'subscribe',
 			SubscriptionEvents::CONFIRM_SUBSCRIPTION => 'confirm',
 			SubscriptionEvents::UNSUBSCRIBE          => 'unsubscribe',
-			CreateRecipientEvent::NAME               => 'create',
-			RemoveRecipientEvent::NAME               => 'remove',
 		);
 	}
 
@@ -97,44 +95,6 @@ class SubscriptionLogger implements EventSubscriberInterface
 				$recipient->getEmail(),
 				$subscription->getList()
 			)
-		);
-	}
-
-	/**
-	 * @param RecipientEvent $event
-	 */
-	public function create(RecipientEvent $event)
-	{
-		/** @var LoggerInterface $logger */
-		$logger = $GLOBALS['container']['avisota.logger.subscription'];
-
-		$recipient = $event->getRecipient();
-
-		$logger->info(
-			sprintf(
-				'Recipient %s was created',
-				$recipient->getEmail()
-			),
-			array('recipient' => $recipient->toArray())
-		);
-	}
-
-	/**
-	 * @param RecipientEvent $event
-	 */
-	public function remove(RecipientEvent $event)
-	{
-		/** @var LoggerInterface $logger */
-		$logger = $GLOBALS['container']['avisota.logger.subscription'];
-
-		$recipient = $event->getRecipient();
-
-		$logger->info(
-			sprintf(
-				'Recipient %s was deleted',
-				$recipient->getEmail()
-			),
-			array('recipient' => $recipient->toArray())
 		);
 	}
 }

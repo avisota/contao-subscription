@@ -324,7 +324,7 @@ class SubscriptionManager
 				$this->entityManager->remove($blacklist);
 			}
 
-			$event = new PrepareSubscriptionEvent($subscription);
+			$event = new PrepareSubscriptionEvent($subscription, $recipient);
 			$this->eventDispatcher->dispatch(SubscriptionEvents::PREPARE_SUBSCRIPTION, $event);
 
 			$subscriptions[]    = $subscription;
