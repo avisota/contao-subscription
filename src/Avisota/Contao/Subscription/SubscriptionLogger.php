@@ -46,14 +46,16 @@ class SubscriptionLogger implements EventSubscriberInterface
 		/** @var LoggerInterface $logger */
 		$logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$recipient    = $event->getRecipient();
 		$subscription = $event->getSubscription();
+		$recipient    = $subscription->getRecipient();
 
 		$logger->info(
 			sprintf(
 				'Recipient %s start subscription to %s',
 				$recipient->getEmail(),
-				$subscription->getList()
+				$subscription->getMailingList()
+					? $subscription->getMailingList()->getTitle()
+					: 'global'
 			)
 		);
 	}
@@ -66,14 +68,16 @@ class SubscriptionLogger implements EventSubscriberInterface
 		/** @var LoggerInterface $logger */
 		$logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$recipient    = $event->getRecipient();
 		$subscription = $event->getSubscription();
+		$recipient    = $subscription->getRecipient();
 
 		$logger->info(
 			sprintf(
 				'Recipient %s confirmed subscription to %s',
 				$recipient->getEmail(),
-				$subscription->getList()
+				$subscription->getMailingList()
+					? $subscription->getMailingList()->getTitle()
+					: 'global'
 			)
 		);
 	}
@@ -86,14 +90,16 @@ class SubscriptionLogger implements EventSubscriberInterface
 		/** @var LoggerInterface $logger */
 		$logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$recipient    = $event->getRecipient();
 		$subscription = $event->getSubscription();
+		$recipient    = $subscription->getRecipient();
 
 		$logger->info(
 			sprintf(
 				'Recipient %s cancel subscription to %s',
 				$recipient->getEmail(),
-				$subscription->getList()
+				$subscription->getMailingList()
+					? $subscription->getMailingList()->getTitle()
+					: 'global'
 			)
 		);
 	}
