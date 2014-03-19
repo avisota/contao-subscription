@@ -15,18 +15,11 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-use Avisota\Contao\Entity\Recipient;
 use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
-use Symfony\Component\EventDispatcher\Event;
 
-class UnsubscribeEvent extends Event
+class UnsubscribeEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var Subscription
-	 */
-	protected $subscription;
-
 	/**
 	 * @var Blacklist|null
 	 */
@@ -39,16 +32,9 @@ class UnsubscribeEvent extends Event
 
 	function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
 	{
-		$this->list = $subscription;
+		parent::__construct($subscription);
 		$this->blacklist = $blacklist;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getSubscription()
-	{
-		return $this->list;
+		$this->options   = $options;
 	}
 
 	/**

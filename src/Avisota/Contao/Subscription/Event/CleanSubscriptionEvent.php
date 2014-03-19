@@ -15,6 +15,6 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-class ConfirmSubscriptionEvent extends SubscriptionAwareEvent
+class CleanSubscriptionEvent extends SubscriptionAwareEvent
 {
 }

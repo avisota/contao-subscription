@@ -15,26 +15,27 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
+use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
+use Symfony\Component\EventDispatcher\Event;
 
-class SubscribeEvent extends SubscriptionAwareEvent
+class SubscriptionAwareEvent extends Event
 {
 	/**
-	 * @var int
+	 * @var Subscription
 	 */
-	protected $options;
+	protected $subscription;
 
-	function __construct(Subscription $subscription, $options)
+	function __construct(Subscription $subscription)
 	{
-		parent::__construct($subscription);
-		$this->options = $options;
+		$this->subscription = $subscription;
 	}
 
 	/**
-	 * @return int
+	 * @return Subscription
 	 */
-	public function getOptions()
+	public function getSubscription()
 	{
-		return $this->options;
+		return $this->subscription;
 	}
 }

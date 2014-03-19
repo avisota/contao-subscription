@@ -15,37 +15,12 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-use Avisota\Contao\Entity\Recipient;
-use Avisota\Contao\Entity\Subscription;
-use Symfony\Component\EventDispatcher\Event;
-
-class ResolveSubscriptionNameEvent extends Event
+class ResolveSubscriptionNameEvent extends SubscriptionAwareEvent
 {
-	const NAME = 'Avisota\Contao\Core\Event\ResolveSubscriptionName';
-
-	/**
-	 * @var Subscription
-	 */
-	protected $subscription;
-
 	/**
 	 * @var string
 	 */
 	protected $subscriptionName;
-
-	function __construct(Subscription $subscription)
-	{
-		$this->subscription     = $subscription;
-		$this->subscriptionName = $subscription->getList();
-	}
-
-	/**
-	 * @return Subscription
-	 */
-	public function getSubscription()
-	{
-		return $this->subscription;
-	}
 
 	/**
 	 * @param string $name

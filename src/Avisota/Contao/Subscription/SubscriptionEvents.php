@@ -54,6 +54,17 @@ class SubscriptionEvents
 	const UNSUBSCRIBE = 'avisota.subscription.unsubscribe';
 
 	/**
+	 * The CLEAN_SUBSCRIPTION event occurs when an unconfirmed subscription request timed out and get removed.
+	 *
+	 * The event listener method receives a Avisota\Contao\Subscription\Event\CleanSubscriptionEvent instance.
+	 *
+	 * @var string
+	 *
+	 * @api
+	 */
+	const CLEAN_SUBSCRIPTION = 'avisota.subscription.clean';
+
+	/**
 	 * The RESOLVE_RECIPIENT event occurs when the effective recipient instance must received from a subscription.
 	 *
 	 * The event listener method receives a Avisota\Contao\Subscription\Event\ResolveRecipientEvent instance.
@@ -75,4 +86,17 @@ class SubscriptionEvents
 	 * @api
 	 */
 	const PREPARE_SUBSCRIPTION = 'avisota.subscription.prepare-subscription';
+
+	/**
+	 * The CREATE_RECIPIENT_PROPERTIES_OPTIONS event occurs when an options
+	 * list must be filled with recipient properties.
+	 *
+	 * The event listener method receives
+	 * a ContaoCommunityAlliance\Contao\Events\CreateOptions\CreateOptionsEvent instance.
+	 *
+	 * @var string
+	 *
+	 * @api
+	 */
+	const CREATE_RECIPIENT_PROPERTIES_OPTIONS = 'avisota.subscription-recipient.create-recipient-properties-options';
 }

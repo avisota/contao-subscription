@@ -20,8 +20,6 @@ use Symfony\Component\EventDispatcher\Event;
 
 class CollectSubscriptionListsEvent extends Event
 {
-	const NAME = 'Avisota\Contao\Core\Event\CollectSubscriptionLists';
-
 	/**
 	 * @var \ArrayObject
 	 */

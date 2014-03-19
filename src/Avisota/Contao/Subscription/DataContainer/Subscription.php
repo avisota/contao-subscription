@@ -15,41 +15,10 @@
 
 namespace Avisota\Contao\Subscription\DataContainer;
 
-use Avisota\Contao\Subscription\Event\ResolveSubscriptionNameEvent;
 use Contao\Doctrine\ORM\EntityHelper;
 
 class Subscription extends \Backend
 {
-	/**
-	 * @param array
-	 */
-	public function addRecipientSubscriptionRow($subscriptionData)
-	{
-		global $container;
-
-		/** @var EventDispatcher $eventDispatcher */
-		$eventDispatcher = $container['event-dispatcher'];
-
-		$subscriptionRepository = EntityHelper::getRepository('Avisota\Contao:Subscription');
-		/** @var \Avisota\Contao\Entity\Subscription $subscription */
-		$subscription = $subscriptionRepository->findOneBy(
-			array(
-				'recipient' => $subscriptionData['recipient'],
-				'list'      => $subscriptionData['list'],
-			)
-		);
-
-		$event = new ResolveSubscriptionNameEvent($subscription);
-		$eventDispatcher->dispatch(ResolveSubscriptionNameEvent::NAME, $event);
-
-		$label = $event->getSubscriptionName();
-
-		return sprintf(
-			'<div>%s</div>',
-			$label
-		);
-	}
-
 	/**
 	 * Return the "toggle visibility" button
 	 *

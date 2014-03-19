@@ -8,13 +8,14 @@
  *
  * @copyright  bit3 UG 2013
  * @author     Tristan Lins <tristan.lins@bit3.de>
- * @package    avisota/contao-core
+ * @package    avisota/contao-subscription
  * @license    LGPL-3.0+
  * @filesource
  */
 
-namespace Avisota\Contao\Subscription\Event;
 
-class ConfirmSubscriptionEvent extends SubscriptionAwareEvent
-{
-}
+/**
+ * Module
+ */
+$GLOBALS['TL_LANG']['MSC']['avisota-global-subscription']       = 'global subscription';
+$GLOBALS['TL_LANG']['MSC']['avisota-global-subscription-label'] = 'global';

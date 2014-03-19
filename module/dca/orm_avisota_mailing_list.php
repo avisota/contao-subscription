@@ -26,7 +26,7 @@ $GLOBALS['TL_DCA']['orm_avisota_mailing_list']['fields']['subscriptions'] = arra
 	'oneToMany' => array(
 		'targetEntity' => 'Avisota\Contao\Entity\Subscription',
 		'cascade'      => array('all'),
-		'mappedBy'     => 'mailing_list',
+		'mappedBy'     => 'mailingList',
 	),
 );
 $GLOBALS['TL_DCA']['orm_avisota_mailing_list']['fields']['blacklists'] = array
@@ -35,6 +35,6 @@ $GLOBALS['TL_DCA']['orm_avisota_mailing_list']['fields']['blacklists'] = array
 	'oneToMany' => array(
 		'targetEntity' => 'Avisota\Contao\Entity\Blacklist',
 		'cascade'      => array('all'),
-		'mappedBy'     => 'mailing_list',
+		'mappedBy'     => 'mailingList',
 	),
 );
