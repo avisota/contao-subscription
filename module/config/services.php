@@ -20,7 +20,7 @@
 
 $container['avisota.subscription'] = $container->share(
 	function ($container) {
-		$subscriptionManager = new \Avisota\Contao\Core\Subscription\SubscriptionManager();
+		$subscriptionManager = new \Avisota\Contao\Subscription\SubscriptionManager();
 		$subscriptionManager->setEntityManager($container['doctrine.orm.entityManager']);
 		$subscriptionManager->setEventDispatcher($container['event-dispatcher']);
 		$subscriptionManager->setLogger($container['avisota.logger.subscription']);

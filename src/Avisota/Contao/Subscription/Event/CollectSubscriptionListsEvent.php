@@ -15,7 +15,6 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-use Avisota\Contao\Core\Message\Renderer;
 use Symfony\Component\EventDispatcher\Event;
 
 class CollectSubscriptionListsEvent extends Event

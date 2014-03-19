@@ -13,7 +13,7 @@
  * @filesource
  */
 
-namespace Avisota\Contao\Core\Subscription;
+namespace Avisota\Contao\Subscription;
 
 use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\MailingList;
