@@ -18,4 +18,4 @@
  * Module
  */
 $GLOBALS['TL_LANG']['MSC']['avisota-global-subscription']       = 'global subscription';
-$GLOBALS['TL_LANG']['MSC']['avisota-global-subscription-label'] = 'global';
+$GLOBALS['TL_LANG']['MSC']['avisota-global-subscription-label'] = 'global subscription';
