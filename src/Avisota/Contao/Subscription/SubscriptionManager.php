@@ -308,7 +308,7 @@ class SubscriptionManager
 
 			$recipientType  = get_class($recipient);
 			$recipientId    = $recipient->getId();
-			$subscriptionId = md5($recipientType . '::' . $recipientId);
+			$subscriptionId = md5($recipientType . '::' . $recipientId . '::' . ($mailingList ? $mailingList->getId() : 'global'));
 
 			$subscription = new Subscription();
 			$subscription->setId($subscriptionId);
