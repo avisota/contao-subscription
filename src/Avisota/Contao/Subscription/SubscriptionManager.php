@@ -455,7 +455,7 @@ class SubscriptionManager
 			}
 			else {
 				$event = new ResolveRecipientEvent($subscription);
-				$this->eventDispatcher->dispatch($event);
+				$this->eventDispatcher->dispatch(SubscriptionEvents::RESOLVE_RECIPIENT, $event);
 				$recipient = $event->getRecipient();
 
 				if (!$recipient) {
