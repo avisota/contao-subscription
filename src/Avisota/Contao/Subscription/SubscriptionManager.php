@@ -58,11 +58,6 @@ class SubscriptionManager
 	const OPT_ACTIVATE = 8;
 
 	/**
-	 * Do not send a confirmation message.
-	 */
-	const OPT_NO_CONFIRMATION = 16;
-
-	/**
 	 * Include existing subscriptions into the result.
 	 */
 	const OPT_INCLUDE_EXISTING = 32;
