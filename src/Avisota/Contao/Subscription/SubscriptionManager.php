@@ -341,12 +341,11 @@ class SubscriptionManager
 	/**
 	 * Confirm subscriptions by one ore more token.
 	 *
-	 * @param SubscriptionRecipientInterface $recipient The recipient instance.
-	 * @param array                          $tokens    The activation tokens.
+	 * @param array $tokens    The activation tokens.
 	 *
 	 * @return Subscription[] Return only the confirmed subscriptions.
 	 */
-	public function confirmByToken(SubscriptionRecipientInterface $recipient, $tokens, $_ = null)
+	public function confirmByToken($tokens, $_ = null)
 	{
 		$tokens = func_get_args();
 		array_shift($tokens);
@@ -355,25 +354,21 @@ class SubscriptionManager
 			$tokens = $tokens[0];
 		}
 
-		$recipientType = get_class($recipient);
-		$recipientId   = $recipient->getId();
-
 		$repository   = $this->entityManager->getRepository('Avisota\Contao:Subscription');
 		$queryBuilder = $repository->createQueryBuilder('s');
 		$expr         = $queryBuilder->expr();
-		$whereTokens  = array();
 
+		$or = $expr->orX();
 		foreach ($tokens as $index => $token) {
-			$whereMailingList[] = $expr->eq('s.activationToken', ':activationToken' . $index);
+			$or->add($expr->eq('s.activationToken', ':activationToken' . $index));
 			$queryBuilder->setParameter('activationToken' . $index, $token);
 		}
 
 		$queryBuilder
-			->where($expr->eq('s.recipientType', ':recipientType'))
-			->andWhere($expr->eq('s.recipientId', ':recipientId'))
-			->andWhere(call_user_func_array(array($expr, 'orX'), ($whereTokens)))
-			->setParameter('recipientType', $recipientType)
-			->setParameter('recipientId', $recipientId);
+			->where($or)
+			->andWhere($expr->eq('s.active', ':active'))
+			->setParameter('active', false);
+
 		$query = $queryBuilder->getQuery();
 
 		$subscriptions = $query->getResult();
