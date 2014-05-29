@@ -52,6 +52,7 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 		),
 		'global_operations' => array
 		(
+			/*
 			'all' => array
 			(
 				'label'      => &$GLOBALS['TL_LANG']['MSC']['all'],
@@ -59,6 +60,7 @@ $GLOBALS['TL_DCA']['orm_avisota_subscription'] = array
 				'class'      => 'header_edit_all',
 				'attributes' => 'onclick="Backend.getScrollOffset();" accesskey="e"'
 			)
+			*/
 		),
 		'operations'        => array
 		(
