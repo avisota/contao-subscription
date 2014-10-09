@@ -34,6 +34,7 @@ $GLOBALS['TL_LANG']['orm_avisota_subscription']['show']['0']                    
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['show']['1']                         = 'Zeigen Sie die Details des Abonnements ID %s an.';
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['status_legend']                     = 'Status';
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['subscription_legend']               = 'Abonnement';
+$GLOBALS['TL_LANG']['orm_avisota_subscription']['subscription_list']['global']       = 'Globales Abonement';
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['subscription_list']['mailing_list'] = 'Mailinglisten';
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['token']['0']                        = 'Abonnements-Token';
 $GLOBALS['TL_LANG']['orm_avisota_subscription']['updatedAt']['0']                    = 'Zuletzt bearbeitet am';
