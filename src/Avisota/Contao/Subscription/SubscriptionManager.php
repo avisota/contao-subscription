@@ -348,11 +348,14 @@ class SubscriptionManager
 	public function confirmByToken($tokens, $_ = null)
 	{
 		$tokens = func_get_args();
-		array_shift($tokens);
 
 		while (count($tokens) == 1 && is_array($tokens[0])) {
 			$tokens = $tokens[0];
 		}
+
+        if (empty($tokens)) {
+            return array();
+        }
 
 		$repository   = $this->entityManager->getRepository('Avisota\Contao:Subscription');
 		$queryBuilder = $repository->createQueryBuilder('s');
