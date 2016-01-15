@@ -2,12 +2,12 @@
 
 /**
  * Avisota newsletter and mailing system
- * Copyright (C) 2013 Tristan Lins
+ * Copyright © 2016 Sven Baumann
  *
  * PHP version 5
  *
- * @copyright  bit3 UG 2013
- * @author     Tristan Lins <tristan.lins@bit3.de>
+ * @copyright  way.vision 2016
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @package    avisota/contao-core
  * @license    LGPL-3.0+
  * @filesource
@@ -15,27 +15,34 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
+/**
+ * Class ResolveSubscriptionNameEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class ResolveSubscriptionNameEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var string
-	 */
-	protected $subscriptionName;
+    /**
+     * @var string
+     */
+    protected $subscriptionName;
 
-	/**
-	 * @param string $name
-	 */
-	public function setSubscriptionName($name)
-	{
-		$this->subscriptionName = $name;
-		return $this;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setSubscriptionName($name)
+    {
+        $this->subscriptionName = $name;
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getSubscriptionName()
-	{
-		return $this->subscriptionName;
-	}
+    /**
+     * @return string
+     */
+    public function getSubscriptionName()
+    {
+        return $this->subscriptionName;
+    }
 }

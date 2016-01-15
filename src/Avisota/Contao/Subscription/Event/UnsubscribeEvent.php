@@ -2,12 +2,12 @@
 
 /**
  * Avisota newsletter and mailing system
- * Copyright (C) 2013 Tristan Lins
+ * Copyright © 2016 Sven Baumann
  *
  * PHP version 5
  *
- * @copyright  bit3 UG 2013
- * @author     Tristan Lins <tristan.lins@bit3.de>
+ * @copyright  way.vision 2016
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @package    avisota/contao-core
  * @license    LGPL-3.0+
  * @filesource
@@ -18,47 +18,61 @@ namespace Avisota\Contao\Subscription\Event;
 use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
 
+/**
+ * Class UnsubscribeEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class UnsubscribeEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var Blacklist|null
-	 */
-	protected $blacklist;
+    /**
+     * @var Blacklist|null
+     */
+    protected $blacklist;
 
-	/**
-	 * @var int
-	 */
-	protected $options;
+    /**
+     * @var int
+     */
+    protected $options;
 
-	function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
-	{
-		parent::__construct($subscription);
-		$this->blacklist = $blacklist;
-		$this->options   = $options;
-	}
+    /**
+     * UnsubscribeEvent constructor.
+     *
+     * @param Subscription   $subscription
+     * @param Blacklist|null $blacklist
+     * @param                $options
+     */
+    function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
+    {
+        parent::__construct($subscription);
+        $this->blacklist = $blacklist;
+        $this->options   = $options;
+    }
 
-	/**
-	 * @param Blacklist|null $blacklist
-	 */
-	public function setBlacklist(Blacklist $blacklist = null)
-	{
-		$this->blacklist = $blacklist;
-		return $this;
-	}
+    /**
+     * @param Blacklist|null $blacklist
+     *
+     * @return $this
+     */
+    public function setBlacklist(Blacklist $blacklist = null)
+    {
+        $this->blacklist = $blacklist;
+        return $this;
+    }
 
-	/**
-	 * @return null
-	 */
-	public function getBlacklist()
-	{
-		return $this->blacklist;
-	}
+    /**
+     * @return null
+     */
+    public function getBlacklist()
+    {
+        return $this->blacklist;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getOptions()
-	{
-		return $this->options;
-	}
+    /**
+     * @return int
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
 }
