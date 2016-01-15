@@ -16,9 +16,6 @@
 namespace Avisota\Contao\Subscription;
 
 use Avisota\Contao\Subscription\Event\ConfirmSubscriptionEvent;
-use Avisota\Contao\SubscriptionRecipient\Event\CreateRecipientEvent;
-use Avisota\Contao\SubscriptionRecipient\Event\RecipientAwareEvent;
-use Avisota\Contao\SubscriptionRecipient\Event\RemoveRecipientEvent;
 use Avisota\Contao\Subscription\Event\SubscribeEvent;
 use Avisota\Contao\Subscription\Event\UnsubscribeEvent;
 use Psr\Log\LoggerInterface;

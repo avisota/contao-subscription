@@ -15,7 +15,6 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
 use Symfony\Component\EventDispatcher\Event;
 

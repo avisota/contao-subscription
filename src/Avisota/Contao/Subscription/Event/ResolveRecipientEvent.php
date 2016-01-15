@@ -15,9 +15,7 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
-use Avisota\Contao\Entity\Subscription;
 use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
-use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Class ResolveRecipientEvent

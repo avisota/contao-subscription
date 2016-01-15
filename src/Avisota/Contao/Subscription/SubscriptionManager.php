@@ -23,8 +23,6 @@ use Avisota\Contao\Subscription\Event\PrepareSubscriptionEvent;
 use Avisota\Contao\Subscription\Event\ResolveRecipientEvent;
 use Avisota\Contao\Subscription\Event\SubscribeEvent;
 use Avisota\Contao\Subscription\Event\UnsubscribeEvent;
-use Avisota\Contao\Subscription\SubscriptionEvents;
-use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\NoResultException;
 use Psr\Log\LoggerInterface;
