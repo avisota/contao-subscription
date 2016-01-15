@@ -17,6 +17,11 @@ namespace Avisota\Contao\Subscription;
 
 use Avisota\Recipient\RecipientInterface;
 
+/**
+ * Interface SubscriptionRecipientInterface
+ *
+ * @package Avisota\Contao\Subscription
+ */
 interface SubscriptionRecipientInterface extends RecipientInterface
 {
 	/**

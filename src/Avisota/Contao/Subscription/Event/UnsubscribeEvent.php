@@ -18,6 +18,11 @@ namespace Avisota\Contao\Subscription\Event;
 use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
 
+/**
+ * Class UnsubscribeEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class UnsubscribeEvent extends SubscriptionAwareEvent
 {
     /**
@@ -30,6 +35,13 @@ class UnsubscribeEvent extends SubscriptionAwareEvent
      */
     protected $options;
 
+    /**
+     * UnsubscribeEvent constructor.
+     *
+     * @param Subscription   $subscription
+     * @param Blacklist|null $blacklist
+     * @param                $options
+     */
     function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
     {
         parent::__construct($subscription);
@@ -39,6 +51,8 @@ class UnsubscribeEvent extends SubscriptionAwareEvent
 
     /**
      * @param Blacklist|null $blacklist
+     *
+     * @return $this
      */
     public function setBlacklist(Blacklist $blacklist = null)
     {

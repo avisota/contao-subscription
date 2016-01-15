@@ -18,6 +18,11 @@ namespace Avisota\Contao\Subscription\Event;
 use Avisota\Contao\Entity\Subscription;
 use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
 
+/**
+ * Class PrepareSubscriptionEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class PrepareSubscriptionEvent extends SubscriptionAwareEvent
 {
     /**
@@ -25,6 +30,12 @@ class PrepareSubscriptionEvent extends SubscriptionAwareEvent
      */
     protected $recipient;
 
+    /**
+     * PrepareSubscriptionEvent constructor.
+     *
+     * @param Subscription                   $subscription
+     * @param SubscriptionRecipientInterface $recipient
+     */
     function __construct(Subscription $subscription, SubscriptionRecipientInterface $recipient)
     {
         parent::__construct($subscription);

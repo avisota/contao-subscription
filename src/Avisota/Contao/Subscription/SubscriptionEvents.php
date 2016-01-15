@@ -15,6 +15,11 @@
 
 namespace Avisota\Contao\Subscription;
 
+/**
+ * Class SubscriptionEvents
+ *
+ * @package Avisota\Contao\Subscription
+ */
 class SubscriptionEvents
 {
     /**

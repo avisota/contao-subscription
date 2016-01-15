@@ -86,6 +86,8 @@ class SubscriptionManager
      *                                                    To check the global state pass null.
      *                                                    To check the global state AND mailing list states, pass null AND the mailing lists.
      *
+     * @param null                           $_
+     *
      * @return bool
      */
     public function isBlacklisted(
@@ -99,13 +101,15 @@ class SubscriptionManager
     /**
      * Get the blacklist entries for a recipient.
      *
-     * @param SubscriptionRecipientInterface $recipient   Recipient to check it's blacklist status.
-     * @param MailingList|array              $mailingList One or more mailing lists to check their blacklist status.
+     * @param SubscriptionRecipientInterface $recipient Recipient to check it's blacklist status.
+     * @param null                           $mailingLists
+     * @param null                           $_
+     *
+     * @return \Avisota\Contao\Entity\Blacklist[] Return an array of blacklist records.
+     * @internal param array|MailingList $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To get all states omit this parameter.
      *                                                    To get the global state pass null.
      *                                                    To get the global state AND mailing list states, pass null AND the mailing lists.
-     *
-     * @return Blacklist[] Return an array of blacklist records.
      */
     public function getBlacklistStatus(
         SubscriptionRecipientInterface $recipient,
@@ -148,13 +152,15 @@ class SubscriptionManager
     /**
      * Find existing subscriptions for a recipient.
      *
-     * @param SubscriptionRecipientInterface $recipient   The recipient instance.
-     * @param MailingList|array              $mailingList One or more mailing lists to check their blacklist status.
+     * @param SubscriptionRecipientInterface $recipient The recipient instance.
+     * @param null                           $mailingLists
+     * @param null                           $_
+     *
+     * @return \Avisota\Contao\Entity\Subscription[]
+     * @internal param array|MailingList $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To get all subscriptions omit this parameter.
      *                                                    To get the global subscription pass null.
      *                                                    To get the global subscription AND mailing list subscriptions, pass null AND the mailing lists.
-     *
-     * @return Subscription[]
      */
     public function getSubscriptions(
         SubscriptionRecipientInterface $recipient,
@@ -246,13 +252,15 @@ class SubscriptionManager
     /**
      * Subscribe to a mailing list.
      *
-     * @param SubscriptionRecipientInterface $recipient   The recipient that subscribe.
-     * @param MailingList|array              $mailingList One or more mailing lists to subscribe to.
-     *                                                    Pass null or omit for global subscription.
-     * @param int                            $options     Subscription options, see SubscriptionManager::OPT_* constants.
+     * @param SubscriptionRecipientInterface $recipient The recipient that subscribe.
+     * @param null                           $mailingLists
+     * @param null                           $_
+     * @param int                            $options   Subscription options, see SubscriptionManager::OPT_* constants.
      *
-     * @return Subscription[] Return the list of all NEW subscriptions. Existing subscriptions will be omited,
+     * @return \Avisota\Contao\Entity\Subscription[] Return the list of all NEW subscriptions. Existing subscriptions will be omited,
      *                        until you pass OPT_INCLUDE_EXISTING to $options.
+     * @internal param array|MailingList $mailingList One or more mailing lists to subscribe to.
+     *                                                    Pass null or omit for global subscription.
      */
     public function subscribe(
         SubscriptionRecipientInterface $recipient,
@@ -338,7 +346,9 @@ class SubscriptionManager
      *
      * @param array $tokens The activation tokens.
      *
-     * @return Subscription[] Return only the confirmed subscriptions.
+     * @param null  $_
+     *
+     * @return \Avisota\Contao\Entity\Subscription[] Return only the confirmed subscriptions.
      */
     public function confirmByToken($tokens, $_ = null)
     {
@@ -379,7 +389,9 @@ class SubscriptionManager
      *
      * @param Subscription|array $subscriptions One or more subscription instances to confirm.
      *
-     * @return Subscription[] Return only the confirmed subscriptions.
+     * @param null               $_
+     *
+     * @return \Avisota\Contao\Entity\Subscription[] Return only the confirmed subscriptions.
      */
     public function confirm($subscriptions, $_ = null)
     {
@@ -418,6 +430,8 @@ class SubscriptionManager
      * Remove one or more subscriptions.
      *
      * @param Subscription|array $subscriptions One or more subscription instances to confirm.
+     * @param null               $_
+     * @param int                $options
      */
     public function unsubscribe($subscriptions, $_ = null, $options = 0)
     {
@@ -487,6 +501,8 @@ class SubscriptionManager
 
     /**
      * @param EntityManager $entityManager
+     *
+     * @return $this
      */
     public function setEntityManager(EntityManager $entityManager)
     {
@@ -504,6 +520,8 @@ class SubscriptionManager
 
     /**
      * @param EventDispatcher $eventDispatcher
+     *
+     * @return $this
      */
     public function setEventDispatcher(EventDispatcher $eventDispatcher)
     {
@@ -521,6 +539,8 @@ class SubscriptionManager
 
     /**
      * @param \Psr\Log\LoggerInterface $logger
+     *
+     * @return $this
      */
     public function setLogger($logger)
     {

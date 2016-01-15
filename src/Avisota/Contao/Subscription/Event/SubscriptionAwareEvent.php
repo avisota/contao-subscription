@@ -19,6 +19,11 @@ use Avisota\Contao\Entity\Blacklist;
 use Avisota\Contao\Entity\Subscription;
 use Symfony\Component\EventDispatcher\Event;
 
+/**
+ * Class SubscriptionAwareEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class SubscriptionAwareEvent extends Event
 {
     /**
@@ -26,6 +31,11 @@ class SubscriptionAwareEvent extends Event
      */
     protected $subscription;
 
+    /**
+     * SubscriptionAwareEvent constructor.
+     *
+     * @param Subscription $subscription
+     */
     function __construct(Subscription $subscription)
     {
         $this->subscription = $subscription;

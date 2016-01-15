@@ -17,6 +17,11 @@ namespace Avisota\Contao\Subscription\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
+/**
+ * Class CollectSubscriptionListsEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class CollectSubscriptionListsEvent extends Event
 {
     /**
@@ -24,6 +29,11 @@ class CollectSubscriptionListsEvent extends Event
      */
     protected $options;
 
+    /**
+     * CollectSubscriptionListsEvent constructor.
+     *
+     * @param \ArrayObject $options
+     */
     function __construct(\ArrayObject $options)
     {
         $this->options = $options;

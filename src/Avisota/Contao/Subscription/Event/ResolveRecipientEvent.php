@@ -19,6 +19,11 @@ use Avisota\Contao\Entity\Subscription;
 use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
 use Symfony\Component\EventDispatcher\Event;
 
+/**
+ * Class ResolveRecipientEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class ResolveRecipientEvent extends SubscriptionAwareEvent
 {
     /**
@@ -28,6 +33,8 @@ class ResolveRecipientEvent extends SubscriptionAwareEvent
 
     /**
      * @param SubscriptionRecipientInterface|null $recipient
+     *
+     * @return $this
      */
     public function setRecipient(SubscriptionRecipientInterface $recipient = null)
     {

@@ -17,6 +17,11 @@ namespace Avisota\Contao\Subscription\Event;
 
 use Avisota\Contao\Entity\Subscription;
 
+/**
+ * Class SubscribeEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class SubscribeEvent extends SubscriptionAwareEvent
 {
 	/**
@@ -24,7 +29,13 @@ class SubscribeEvent extends SubscriptionAwareEvent
 	 */
 	protected $options;
 
-	function __construct(Subscription $subscription, $options)
+	/**
+	 * SubscribeEvent constructor.
+	 *
+	 * @param Subscription $subscription
+	 * @param              $options
+     */
+    function __construct(Subscription $subscription, $options)
 	{
 		parent::__construct($subscription);
 		$this->options = $options;

@@ -15,6 +15,11 @@
 
 namespace Avisota\Contao\Subscription\Event;
 
+/**
+ * Class ResolveSubscriptionNameEvent
+ *
+ * @package Avisota\Contao\Subscription\Event
+ */
 class ResolveSubscriptionNameEvent extends SubscriptionAwareEvent
 {
     /**
@@ -24,6 +29,8 @@ class ResolveSubscriptionNameEvent extends SubscriptionAwareEvent
 
     /**
      * @param string $name
+     *
+     * @return $this
      */
     public function setSubscriptionName($name)
     {

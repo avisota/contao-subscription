@@ -17,6 +17,11 @@ namespace Avisota\Contao\Subscription\DataContainer;
 
 use Contao\Doctrine\ORM\EntityHelper;
 
+/**
+ * Class Subscription
+ *
+ * @package Avisota\Contao\Subscription\DataContainer
+ */
 class Subscription extends \Backend
 {
     /**
