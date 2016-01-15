@@ -38,14 +38,12 @@ class Subscription extends \Backend
      */
     public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
     {
-        $input = \Input::getInstance();
-
         $subscriptionRepository = EntityHelper::getRepository('Avisota\Contao:Subscription');
         /** @var \Avisota\Contao\Entity\Subscription $subscription */
 
-        if (strlen($input->get('tid'))) {
-            $id        = $input->get('tid');
-            $confirmed = $input->get('state') == 1;
+        if (strlen(\Input::get('tid'))) {
+            $id        = \Input::get('tid');
+            $confirmed = \Input::get('state') == 1;
 
             /** @var \Avisota\Contao\Entity\Subscription $subscription */
             $subscription = $subscriptionRepository->find($id);
