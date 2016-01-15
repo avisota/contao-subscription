@@ -19,12 +19,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class OptionsBuilder implements EventSubscriberInterface
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	static public function getSubscribedEvents()
-	{
-		return array(
-		);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    static public function getSubscribedEvents()
+    {
+        return array();
+    }
 }

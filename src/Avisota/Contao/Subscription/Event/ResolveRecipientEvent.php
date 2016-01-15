@@ -21,25 +21,25 @@ use Symfony\Component\EventDispatcher\Event;
 
 class ResolveRecipientEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var SubscriptionRecipientInterface|null
-	 */
-	protected $recipient;
+    /**
+     * @var SubscriptionRecipientInterface|null
+     */
+    protected $recipient;
 
-	/**
-	 * @param SubscriptionRecipientInterface|null $recipient
-	 */
-	public function setRecipient(SubscriptionRecipientInterface $recipient = null)
-	{
-		$this->recipient = $recipient;
-		return $this;
-	}
+    /**
+     * @param SubscriptionRecipientInterface|null $recipient
+     */
+    public function setRecipient(SubscriptionRecipientInterface $recipient = null)
+    {
+        $this->recipient = $recipient;
+        return $this;
+    }
 
-	/**
-	 * @return SubscriptionRecipientInterface|null
-	 */
-	public function getRecipient()
-	{
-		return $this->recipient;
-	}
+    /**
+     * @return SubscriptionRecipientInterface|null
+     */
+    public function getRecipient()
+    {
+        return $this->recipient;
+    }
 }

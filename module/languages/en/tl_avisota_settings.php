@@ -13,17 +13,16 @@
  * @filesource
  */
 
-
 /**
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup']      = array(
-	'Clean unconfirmed subscriptions',
-	'Clean subscriptions that does not confirmed after certain days.'
+    'Clean unconfirmed subscriptions',
+    'Clean subscriptions that does not confirmed after certain days.'
 );
 $GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup_days'] = array(
-	'Days',
-	'Define after how many days unconfirmed subscriptions get removed.'
+    'Days',
+    'Define after how many days unconfirmed subscriptions get removed.'
 );
 
 /**

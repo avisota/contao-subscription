@@ -19,21 +19,21 @@ use Symfony\Component\EventDispatcher\Event;
 
 class CollectSubscriptionListsEvent extends Event
 {
-	/**
-	 * @var \ArrayObject
-	 */
-	protected $options;
+    /**
+     * @var \ArrayObject
+     */
+    protected $options;
 
-	function __construct(\ArrayObject $options)
-	{
-		$this->options = $options;
-	}
+    function __construct(\ArrayObject $options)
+    {
+        $this->options = $options;
+    }
 
-	/**
-	 * @return \ArrayObject
-	 */
-	public function getOptions()
-	{
-		return $this->options;
-	}
+    /**
+     * @return \ArrayObject
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
 }

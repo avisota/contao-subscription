@@ -21,21 +21,21 @@ use Symfony\Component\EventDispatcher\Event;
 
 class SubscriptionAwareEvent extends Event
 {
-	/**
-	 * @var Subscription
-	 */
-	protected $subscription;
+    /**
+     * @var Subscription
+     */
+    protected $subscription;
 
-	function __construct(Subscription $subscription)
-	{
-		$this->subscription = $subscription;
-	}
+    function __construct(Subscription $subscription)
+    {
+        $this->subscription = $subscription;
+    }
 
-	/**
-	 * @return Subscription
-	 */
-	public function getSubscription()
-	{
-		return $this->subscription;
-	}
+    /**
+     * @return Subscription
+     */
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
 }

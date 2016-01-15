@@ -20,22 +20,22 @@ use Avisota\Contao\Subscription\SubscriptionRecipientInterface;
 
 class PrepareSubscriptionEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var SubscriptionRecipientInterface
-	 */
-	protected $recipient;
+    /**
+     * @var SubscriptionRecipientInterface
+     */
+    protected $recipient;
 
-	function __construct(Subscription $subscription, SubscriptionRecipientInterface $recipient)
-	{
-		parent::__construct($subscription);
-		$this->recipient = $recipient;
-	}
+    function __construct(Subscription $subscription, SubscriptionRecipientInterface $recipient)
+    {
+        parent::__construct($subscription);
+        $this->recipient = $recipient;
+    }
 
-	/**
-	 * @return SubscriptionRecipientInterface
-	 */
-	public function getRecipient()
-	{
-		return $this->recipient;
-	}
+    /**
+     * @return SubscriptionRecipientInterface
+     */
+    public function getRecipient()
+    {
+        return $this->recipient;
+    }
 }

@@ -13,47 +13,46 @@
  * @filesource
  */
 
-
 /**
  * Table orm_avisota_subscription_log
  * Entity Avisota\Contao:SubscriptionLog
  */
 $GLOBALS['TL_DCA']['orm_avisota_subscription_log'] = array
 (
-	// Entity
-	'entity' => array(
-		'idGenerator' => \Doctrine\ORM\Mapping\ClassMetadataInfo::GENERATOR_TYPE_UUID
-	),
-	// Fields
-	'fields' => array
-	(
-		'id'        => array
-		(
-			'field' => array(
-				'id'   => true,
-				'type' => 'string',
-				'length' => '36',
-				'options' => array('fixed' => true),
-			)
-		),
-		'recipient' => array
-		(
-			'field' => array(
-				'type' => 'string',
-			)
-		),
-		'list'      => array
-		(
-			'field' => array(
-				'type'   => 'string',
-			)
-		),
-		'datetime'  => array
-		(
-			'field' => array(
-				'type'     => 'datetime',
-				'nullable' => true,
-			)
-		),
-	)
+    // Entity
+    'entity' => array(
+        'idGenerator' => \Doctrine\ORM\Mapping\ClassMetadataInfo::GENERATOR_TYPE_UUID
+    ),
+    // Fields
+    'fields' => array
+    (
+        'id'        => array
+        (
+            'field' => array(
+                'id'      => true,
+                'type'    => 'string',
+                'length'  => '36',
+                'options' => array('fixed' => true),
+            )
+        ),
+        'recipient' => array
+        (
+            'field' => array(
+                'type' => 'string',
+            )
+        ),
+        'list'      => array
+        (
+            'field' => array(
+                'type' => 'string',
+            )
+        ),
+        'datetime'  => array
+        (
+            'field' => array(
+                'type'     => 'datetime',
+                'nullable' => true,
+            )
+        ),
+    )
 );

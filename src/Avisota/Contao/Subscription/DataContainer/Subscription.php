@@ -19,56 +19,56 @@ use Contao\Doctrine\ORM\EntityHelper;
 
 class Subscription extends \Backend
 {
-	/**
-	 * Return the "toggle visibility" button
-	 *
-	 * @param array
-	 * @param string
-	 * @param string
-	 * @param string
-	 * @param string
-	 * @param string
-	 *
-	 * @return string
-	 */
-	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
-	{
-		$input = \Input::getInstance();
+    /**
+     * Return the "toggle visibility" button
+     *
+     * @param array
+     * @param string
+     * @param string
+     * @param string
+     * @param string
+     * @param string
+     *
+     * @return string
+     */
+    public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
+    {
+        $input = \Input::getInstance();
 
-		$subscriptionRepository = EntityHelper::getRepository('Avisota\Contao:Subscription');
-		/** @var \Avisota\Contao\Entity\Subscription $subscription */
+        $subscriptionRepository = EntityHelper::getRepository('Avisota\Contao:Subscription');
+        /** @var \Avisota\Contao\Entity\Subscription $subscription */
 
-		if (strlen($input->get('tid'))) {
-			$id = $input->get('tid');
-			$confirmed = $input->get('state') == 1;
+        if (strlen($input->get('tid'))) {
+            $id        = $input->get('tid');
+            $confirmed = $input->get('state') == 1;
 
-			/** @var \Avisota\Contao\Entity\Subscription $subscription */
-			$subscription = $subscriptionRepository->find($id);
+            /** @var \Avisota\Contao\Entity\Subscription $subscription */
+            $subscription = $subscriptionRepository->find($id);
 
-			$subscription->setConfirmed($confirmed);
+            $subscription->setConfirmed($confirmed);
 
-			$entityManager = EntityHelper::getEntityManager();
-			$entityManager->persist($subscription);
-			$entityManager->flush($subscription);
+            $entityManager = EntityHelper::getEntityManager();
+            $entityManager->persist($subscription);
+            $entityManager->flush($subscription);
 
-			$this->redirect($this->getReferer());
-		}
+            $this->redirect($this->getReferer());
+        }
 
-		$subscription = $subscriptionRepository->findOneBy(
-			array(
-				'recipient' => $row['recipient'],
-				'list'      => $row['list'],
-			)
-		);
+        $subscription = $subscriptionRepository->findOneBy(
+            array(
+                'recipient' => $row['recipient'],
+                'list'      => $row['list'],
+            )
+        );
 
-		$href .= '&amp;tid=' . $subscription->id() . '&amp;state=' . ($row['confirmed'] ? '' : 1);
+        $href .= '&amp;tid=' . $subscription->id() . '&amp;state=' . ($row['confirmed'] ? '' : 1);
 
-		if (!$row['confirmed']) {
-			$icon = 'invisible.gif';
-		}
+        if (!$row['confirmed']) {
+            $icon = 'invisible.gif';
+        }
 
-		return '<a href="' . $this->addToUrl($href) . '" title="' . specialchars(
-			$title
-		) . '"' . $attributes . '>' . $this->generateImage($icon, $label) . '</a> ';
-	}
+        return '<a href="' . $this->addToUrl($href) . '" title="' . specialchars(
+            $title
+        ) . '"' . $attributes . '>' . $this->generateImage($icon, $label) . '</a> ';
+    }
 }

@@ -26,81 +26,81 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class SubscriptionLogger implements EventSubscriberInterface
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	public static function getSubscribedEvents()
-	{
-		return array(
-			SubscriptionEvents::SUBSCRIBE            => 'subscribe',
-			SubscriptionEvents::CONFIRM_SUBSCRIPTION => 'confirm',
-			SubscriptionEvents::UNSUBSCRIBE          => 'unsubscribe',
-		);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public static function getSubscribedEvents()
+    {
+        return array(
+            SubscriptionEvents::SUBSCRIBE            => 'subscribe',
+            SubscriptionEvents::CONFIRM_SUBSCRIPTION => 'confirm',
+            SubscriptionEvents::UNSUBSCRIBE          => 'unsubscribe',
+        );
+    }
 
-	/**
-	 * @param SubscribeEvent $event
-	 */
-	public function subscribe(SubscribeEvent $event)
-	{
-		/** @var LoggerInterface $logger */
-		$logger = $GLOBALS['container']['avisota.logger.subscription'];
+    /**
+     * @param SubscribeEvent $event
+     */
+    public function subscribe(SubscribeEvent $event)
+    {
+        /** @var LoggerInterface $logger */
+        $logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$subscription = $event->getSubscription();
-		$recipient    = $subscription->getRecipient();
+        $subscription = $event->getSubscription();
+        $recipient    = $subscription->getRecipient();
 
-		$logger->info(
-			sprintf(
-				'Recipient %s start subscription to %s',
-				$recipient->getEmail(),
-				$subscription->getMailingList()
-					? $subscription->getMailingList()->getTitle()
-					: 'global'
-			)
-		);
-	}
+        $logger->info(
+            sprintf(
+                'Recipient %s start subscription to %s',
+                $recipient->getEmail(),
+                $subscription->getMailingList()
+                    ? $subscription->getMailingList()->getTitle()
+                    : 'global'
+            )
+        );
+    }
 
-	/**
-	 * @param ConfirmSubscriptionEvent $event
-	 */
-	public function confirm(ConfirmSubscriptionEvent $event)
-	{
-		/** @var LoggerInterface $logger */
-		$logger = $GLOBALS['container']['avisota.logger.subscription'];
+    /**
+     * @param ConfirmSubscriptionEvent $event
+     */
+    public function confirm(ConfirmSubscriptionEvent $event)
+    {
+        /** @var LoggerInterface $logger */
+        $logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$subscription = $event->getSubscription();
-		$recipient    = $subscription->getRecipient();
+        $subscription = $event->getSubscription();
+        $recipient    = $subscription->getRecipient();
 
-		$logger->info(
-			sprintf(
-				'Recipient %s confirmed subscription to %s',
-				$recipient->getEmail(),
-				$subscription->getMailingList()
-					? $subscription->getMailingList()->getTitle()
-					: 'global'
-			)
-		);
-	}
+        $logger->info(
+            sprintf(
+                'Recipient %s confirmed subscription to %s',
+                $recipient->getEmail(),
+                $subscription->getMailingList()
+                    ? $subscription->getMailingList()->getTitle()
+                    : 'global'
+            )
+        );
+    }
 
-	/**
-	 * @param UnsubscribeEvent $event
-	 */
-	public function unsubscribe(UnsubscribeEvent $event)
-	{
-		/** @var LoggerInterface $logger */
-		$logger = $GLOBALS['container']['avisota.logger.subscription'];
+    /**
+     * @param UnsubscribeEvent $event
+     */
+    public function unsubscribe(UnsubscribeEvent $event)
+    {
+        /** @var LoggerInterface $logger */
+        $logger = $GLOBALS['container']['avisota.logger.subscription'];
 
-		$subscription = $event->getSubscription();
-		$recipient    = $subscription->getRecipient();
+        $subscription = $event->getSubscription();
+        $recipient    = $subscription->getRecipient();
 
-		$logger->info(
-			sprintf(
-				'Recipient %s cancel subscription to %s',
-				$recipient->getEmail(),
-				$subscription->getMailingList()
-					? $subscription->getMailingList()->getTitle()
-					: 'global'
-			)
-		);
-	}
+        $logger->info(
+            sprintf(
+                'Recipient %s cancel subscription to %s',
+                $recipient->getEmail(),
+                $subscription->getMailingList()
+                    ? $subscription->getMailingList()->getTitle()
+                    : 'global'
+            )
+        );
+    }
 }

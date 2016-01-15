@@ -17,25 +17,25 @@ namespace Avisota\Contao\Subscription\Event;
 
 class ResolveSubscriptionNameEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var string
-	 */
-	protected $subscriptionName;
+    /**
+     * @var string
+     */
+    protected $subscriptionName;
 
-	/**
-	 * @param string $name
-	 */
-	public function setSubscriptionName($name)
-	{
-		$this->subscriptionName = $name;
-		return $this;
-	}
+    /**
+     * @param string $name
+     */
+    public function setSubscriptionName($name)
+    {
+        $this->subscriptionName = $name;
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getSubscriptionName()
-	{
-		return $this->subscriptionName;
-	}
+    /**
+     * @return string
+     */
+    public function getSubscriptionName()
+    {
+        return $this->subscriptionName;
+    }
 }

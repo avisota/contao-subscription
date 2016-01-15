@@ -20,45 +20,45 @@ use Avisota\Contao\Entity\Subscription;
 
 class UnsubscribeEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var Blacklist|null
-	 */
-	protected $blacklist;
+    /**
+     * @var Blacklist|null
+     */
+    protected $blacklist;
 
-	/**
-	 * @var int
-	 */
-	protected $options;
+    /**
+     * @var int
+     */
+    protected $options;
 
-	function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
-	{
-		parent::__construct($subscription);
-		$this->blacklist = $blacklist;
-		$this->options   = $options;
-	}
+    function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
+    {
+        parent::__construct($subscription);
+        $this->blacklist = $blacklist;
+        $this->options   = $options;
+    }
 
-	/**
-	 * @param Blacklist|null $blacklist
-	 */
-	public function setBlacklist(Blacklist $blacklist = null)
-	{
-		$this->blacklist = $blacklist;
-		return $this;
-	}
+    /**
+     * @param Blacklist|null $blacklist
+     */
+    public function setBlacklist(Blacklist $blacklist = null)
+    {
+        $this->blacklist = $blacklist;
+        return $this;
+    }
 
-	/**
-	 * @return null
-	 */
-	public function getBlacklist()
-	{
-		return $this->blacklist;
-	}
+    /**
+     * @return null
+     */
+    public function getBlacklist()
+    {
+        return $this->blacklist;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getOptions()
-	{
-		return $this->options;
-	}
+    /**
+     * @return int
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
 }
