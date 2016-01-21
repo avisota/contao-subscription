@@ -1,0 +1,10 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:03:11+02:00" original="orm_avisota_mailing_list" source-language="en" target-language="pl">
+    <body>
+      <trans-unit id="orm_avisota_mailing_list.subscriptions.0">
+        <source>Subscriptions</source>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

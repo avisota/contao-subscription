@@ -1,0 +1,46 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:03:11+02:00" original="orm_avisota_subscription" source-language="en" target-language="ru-RU">
+    <body>
+      <trans-unit id="orm_avisota_subscription.createdAt.0">
+        <source>Created at</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.updatedAt.0">
+        <source>Last modified at</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.recipientType.0">
+        <source>Recipient type</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.recipientId.0">
+        <source>Recipient ID</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.mailingList.0">
+        <source>Subscribed mailing list</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_legend">
+        <source>Subscription</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_list.global">
+        <source>global subscription</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_list.mailing_list">
+        <source>Mailing lists</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.show.0">
+        <source>Subscription details</source>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.show.1">
+        <source>Show the details of subscription ID %s</source>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

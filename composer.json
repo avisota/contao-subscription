@@ -42,19 +42,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Avisota\\Contao\\Subscription": "src/"
+            "Avisota\\Contao\\Subscription\\": "src/"
         }
     },
     "extra": {
         "contao": {
             "sources": {
                 "contao": "system/modules/avisota-subscription"
-            },
-            "transifex": {
-                "project": "avisota-contao",
-                "prefix": "contao-subscription-",
-                "languages_cto": "contao/languages",
-                "languages_tx": ".tx"
             }
         },
         "branch-alias": {
