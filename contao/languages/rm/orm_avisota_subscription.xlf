@@ -1,0 +1,56 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:03:11+02:00" original="orm_avisota_subscription" source-language="en" target-language="rm">
+    <body>
+      <trans-unit id="orm_avisota_subscription.createdAt.0">
+        <source>Created at</source>
+        <target>Creà las</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.updatedAt.0">
+        <source>Last modified at</source>
+        <target>Ultima modificaziun las</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.recipientType.0">
+        <source>Recipient type</source>
+        <target>Tip da destinatur</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.recipientId.0">
+        <source>Recipient ID</source>
+        <target>ID dal destinatur</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.mailingList.0">
+        <source>Subscribed mailing list</source>
+        <target>Glistas da mail abunadas</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_legend">
+        <source>Subscription</source>
+        <target>Abunament</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_list.global">
+        <source>global subscription</source>
+        <target>abunament global</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.subscription_list.mailing_list">
+        <source>Mailing lists</source>
+        <target>Glistas da mail</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.show.0">
+        <source>Subscription details</source>
+        <target>Detagls da l'abunament</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_subscription.show.1">
+        <source>Show the details of subscription ID %s</source>
+        <target>Mussar ils detagls da l'abunament cun l'ID %s</target>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
