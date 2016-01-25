@@ -40,6 +40,8 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  * </pre>
  *
  * @package    avisota/contao-core
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class SubscriptionManager
 {
@@ -88,6 +90,10 @@ class SubscriptionManager
      * @param null                           $_
      *
      * @return bool
+     * TODO What ist $_
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function isBlacklisted(
         SubscriptionRecipientInterface $recipient,
@@ -110,6 +116,10 @@ class SubscriptionManager
      *                                                    To get the global state pass null.
      *                                                    To get the global state AND mailing list states,
      *                                                    pass null AND the mailing lists.
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function getBlacklistStatus(
         SubscriptionRecipientInterface $recipient,
@@ -162,6 +172,10 @@ class SubscriptionManager
      *                                                    To get the global subscription pass null.
      *                                                    To get the global subscription AND mailing list subscriptions,
      *                                                    pass null AND the mailing lists.
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function getSubscriptions(
         SubscriptionRecipientInterface $recipient,
@@ -263,6 +277,12 @@ class SubscriptionManager
      *                        Existing subscriptions will be omited, until you pass OPT_INCLUDE_EXISTING to $options.
      * @internal param array|MailingList $mailingList One or more mailing lists to subscribe to.
      *                                                    Pass null or omit for global subscription.
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function subscribe(
         SubscriptionRecipientInterface $recipient,
@@ -353,6 +373,10 @@ class SubscriptionManager
      * @param null  $_
      *
      * @return \Avisota\Contao\Entity\Subscription[] Return only the confirmed subscriptions.
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function confirmByToken($tokens, $_ = null)
     {
@@ -396,6 +420,11 @@ class SubscriptionManager
      * @param null               $_
      *
      * @return \Avisota\Contao\Entity\Subscription[] Return only the confirmed subscriptions.
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     * @SuppressWarnings(PHPMD.LongVariable)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
      */
     public function confirm($subscriptions, $_ = null)
     {
@@ -436,6 +465,10 @@ class SubscriptionManager
      * @param Subscription|array $subscriptions One or more subscription instances to confirm.
      * @param null               $_
      * @param int                $options
+     * TODO what is $_
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
      */
     public function unsubscribe($subscriptions, $_ = null, $options = 0)
     {

@@ -53,6 +53,9 @@ class Cron implements EventSubscriberInterface
         );
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
     public function cronCleanupRecipientList()
     {
         if (!$GLOBALS['TL_CONFIG']['avisota_subscription_cleanup']) {
