@@ -60,8 +60,10 @@ class SubscriptionLogger implements EventSubscriberInterface
      */
     public function subscribe(SubscribeEvent $event)
     {
+        global $container;
+
         /** @var LoggerInterface $logger */
-        $logger = $GLOBALS['container']['avisota.logger.subscription'];
+        $logger = $container['avisota.logger.subscription'];
 
         $subscription = $event->getSubscription();
         $recipient    = $subscription->getRecipient();
@@ -82,8 +84,10 @@ class SubscriptionLogger implements EventSubscriberInterface
      */
     public function confirm(ConfirmSubscriptionEvent $event)
     {
+        global $container;
+
         /** @var LoggerInterface $logger */
-        $logger = $GLOBALS['container']['avisota.logger.subscription'];
+        $logger = $container['avisota.logger.subscription'];
 
         $subscription = $event->getSubscription();
         $recipient    = $subscription->getRecipient();
@@ -104,8 +108,10 @@ class SubscriptionLogger implements EventSubscriberInterface
      */
     public function unsubscribe(UnsubscribeEvent $event)
     {
+        global $container;
+
         /** @var LoggerInterface $logger */
-        $logger = $GLOBALS['container']['avisota.logger.subscription'];
+        $logger = $container['avisota.logger.subscription'];
 
         $subscription = $event->getSubscription();
         $recipient    = $subscription->getRecipient();
