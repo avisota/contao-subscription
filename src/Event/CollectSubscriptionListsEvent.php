@@ -34,7 +34,7 @@ class CollectSubscriptionListsEvent extends Event
      *
      * @param \ArrayObject $options
      */
-    function __construct(\ArrayObject $options)
+    public function __construct(\ArrayObject $options)
     {
         $this->options = $options;
     }

@@ -24,9 +24,10 @@ use Avisota\Recipient\RecipientInterface;
  */
 interface SubscriptionRecipientInterface extends RecipientInterface
 {
-	/**
-	 * Return the id
-	 * @return mixed
-	 */
-	public function getId();
+    /**
+     * Return the id
+     *
+     * @return mixed
+     */
+    public function getId();
 }

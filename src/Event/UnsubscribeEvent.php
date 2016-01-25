@@ -42,7 +42,7 @@ class UnsubscribeEvent extends SubscriptionAwareEvent
      * @param Blacklist|null $blacklist
      * @param                $options
      */
-    function __construct(Subscription $subscription, Blacklist $blacklist = null, $options)
+    public function __construct(Subscription $subscription, Blacklist $blacklist = null, $options = null)
     {
         parent::__construct($subscription);
         $this->blacklist = $blacklist;

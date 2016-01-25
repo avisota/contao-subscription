@@ -82,7 +82,8 @@ class SubscriptionManager
      * @param MailingList|array              $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To check all states omit this parameter.
      *                                                    To check the global state pass null.
-     *                                                    To check the global state AND mailing list states, pass null AND the mailing lists.
+     *                                                    To check the global state AND mailing list states,
+     *                                                    pass null AND the mailing lists.
      *
      * @param null                           $_
      *
@@ -107,7 +108,8 @@ class SubscriptionManager
      * @internal param array|MailingList $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To get all states omit this parameter.
      *                                                    To get the global state pass null.
-     *                                                    To get the global state AND mailing list states, pass null AND the mailing lists.
+     *                                                    To get the global state AND mailing list states,
+     *                                                    pass null AND the mailing lists.
      */
     public function getBlacklistStatus(
         SubscriptionRecipientInterface $recipient,
@@ -158,7 +160,8 @@ class SubscriptionManager
      * @internal param array|MailingList $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To get all subscriptions omit this parameter.
      *                                                    To get the global subscription pass null.
-     *                                                    To get the global subscription AND mailing list subscriptions, pass null AND the mailing lists.
+     *                                                    To get the global subscription AND mailing list subscriptions,
+     *                                                    pass null AND the mailing lists.
      */
     public function getSubscriptions(
         SubscriptionRecipientInterface $recipient,
@@ -208,7 +211,8 @@ class SubscriptionManager
      * @param SubscriptionRecipientInterface $recipient   The recipient instance.
      * @param MailingList                    $mailingList One or more mailing lists to check their blacklist status.
      *                                                    To get the global subscription pass null.
-     *                                                    To get the mailing list subscription pass a mailing list instance.
+     *                                                    To get the mailing list subscription
+     *                                                    pass a mailing list instance.
      *
      * @return Subscription[]
      */
@@ -255,8 +259,8 @@ class SubscriptionManager
      * @param null                           $_
      * @param int                            $options   Subscription options, see SubscriptionManager::OPT_* constants.
      *
-     * @return \Avisota\Contao\Entity\Subscription[] Return the list of all NEW subscriptions. Existing subscriptions will be omited,
-     *                        until you pass OPT_INCLUDE_EXISTING to $options.
+     * @return \Avisota\Contao\Entity\Subscription[] Return the list of all NEW subscriptions.
+     *                        Existing subscriptions will be omited, until you pass OPT_INCLUDE_EXISTING to $options.
      * @internal param array|MailingList $mailingList One or more mailing lists to subscribe to.
      *                                                    Pass null or omit for global subscription.
      */
@@ -304,7 +308,9 @@ class SubscriptionManager
 
             $recipientType  = get_class($recipient);
             $recipientId    = $recipient->getId();
-            $subscriptionId = md5($recipientType . '::' . $recipientId . '::' . ($mailingList ? $mailingList->getId() : 'global'));
+            $subscriptionId = md5(
+                $recipientType . '::' . $recipientId . '::' . ($mailingList ? $mailingList->getId() : 'global')
+            );
 
             $subscription = new Subscription();
             $subscription->setId($subscriptionId);
