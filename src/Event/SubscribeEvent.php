@@ -33,12 +33,12 @@ class SubscribeEvent extends SubscriptionAwareEvent
      * SubscribeEvent constructor.
      *
      * @param Subscription $subscription
-     * @param              $options
+     * @param              $subscriptionOptions
      */
-    public function __construct(Subscription $subscription, $options)
+    public function __construct(Subscription $subscription, $subscriptionOptions)
     {
         parent::__construct($subscription);
-        $this->options = $options;
+        $this->options = $subscriptionOptions;
     }
 
     /**
