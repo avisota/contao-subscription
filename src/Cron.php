@@ -6,7 +6,8 @@
  *
  * PHP version 5
  *
- * @copyright  MEN AT WORK 2013
+ * @copyright  way.vision 2016
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @package    avisota/contao-subscription-recipient
  * @license    LGPL-3.0+
  * @filesource
