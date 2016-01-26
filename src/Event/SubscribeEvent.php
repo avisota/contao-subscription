@@ -24,28 +24,28 @@ use Avisota\Contao\Entity\Subscription;
  */
 class SubscribeEvent extends SubscriptionAwareEvent
 {
-	/**
-	 * @var int
-	 */
-	protected $options;
-
-	/**
-	 * SubscribeEvent constructor.
-	 *
-	 * @param Subscription $subscription
-	 * @param              $options
+    /**
+     * @var int
      */
-    function __construct(Subscription $subscription, $options)
-	{
-		parent::__construct($subscription);
-		$this->options = $options;
-	}
+    protected $options;
 
-	/**
-	 * @return int
-	 */
-	public function getOptions()
-	{
-		return $this->options;
-	}
+    /**
+     * SubscribeEvent constructor.
+     *
+     * @param Subscription $subscription
+     * @param              $subscriptionOptions
+     */
+    public function __construct(Subscription $subscription, $subscriptionOptions)
+    {
+        parent::__construct($subscription);
+        $this->options = $subscriptionOptions;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
 }

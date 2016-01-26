@@ -18,11 +18,11 @@
  * Palettes
  */
 $GLOBALS['TL_DCA']['tl_avisota_settings']['metapalettes']['default']['subscription']         = array(
-	'avisota_subscription_cleanup',
+    'avisota_subscription_cleanup',
 );
 $GLOBALS['TL_DCA']['tl_avisota_settings']['metasubpalettes']['avisota_subscription_cleanup'] = array
 (
-	'avisota_subscription_cleanup_days',
+    'avisota_subscription_cleanup_days',
 );
 
 /**
@@ -30,20 +30,20 @@ $GLOBALS['TL_DCA']['tl_avisota_settings']['metasubpalettes']['avisota_subscripti
  */
 $GLOBALS['TL_DCA']['tl_avisota_settings']['fields']['avisota_subscription_cleanup'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup'],
-	'inputType' => 'checkbox',
-	'eval'      => array(
-		'submitOnChange' => true,
-		'tl_class'       => 'w50 m12'
-	)
+    'label'     => &$GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup'],
+    'inputType' => 'checkbox',
+    'eval'      => array(
+        'submitOnChange' => true,
+        'tl_class'       => 'w50 m12'
+    )
 );
 
 $GLOBALS['TL_DCA']['tl_avisota_settings']['fields']['avisota_subscription_cleanup_days'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup_days'],
-	'inputType' => 'text',
-	'eval'      => array(
-		'rgxp'     => 'digit',
-		'tl_class' => 'w50',
-	)
+    'label'     => &$GLOBALS['TL_LANG']['tl_avisota_settings']['avisota_subscription_cleanup_days'],
+    'inputType' => 'text',
+    'eval'      => array(
+        'rgxp'     => 'digit',
+        'tl_class' => 'w50',
+    )
 );

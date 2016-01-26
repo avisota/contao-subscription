@@ -36,7 +36,7 @@ class PrepareSubscriptionEvent extends SubscriptionAwareEvent
      * @param Subscription                   $subscription
      * @param SubscriptionRecipientInterface $recipient
      */
-    function __construct(Subscription $subscription, SubscriptionRecipientInterface $recipient)
+    public function __construct(Subscription $subscription, SubscriptionRecipientInterface $recipient)
     {
         parent::__construct($subscription);
         $this->recipient = $recipient;

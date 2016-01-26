@@ -35,6 +35,8 @@ class Subscription extends \Backend
      * @param string
      *
      * @return string
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     * @SuppressWarnings(PHPMD.LongVariable)
      */
     public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
     {

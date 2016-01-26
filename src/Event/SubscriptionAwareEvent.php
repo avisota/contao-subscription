@@ -35,7 +35,7 @@ class SubscriptionAwareEvent extends Event
      *
      * @param Subscription $subscription
      */
-    function __construct(Subscription $subscription)
+    public function __construct(Subscription $subscription)
     {
         $this->subscription = $subscription;
     }
