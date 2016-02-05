@@ -3,6 +3,7 @@
     <body>
       <trans-unit id="orm_avisota_mailing_list.subscriptions.0">
         <source>Subscriptions</source>
+        <target>Assinaturas</target>
         
       </trans-unit>
     </body>

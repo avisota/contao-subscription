@@ -3,10 +3,12 @@
     <body>
       <trans-unit id="MSC.avisota-global-subscription">
         <source>global subscription</source>
+        <target>assinatura global</target>
         
       </trans-unit>
       <trans-unit id="MSC.avisota-global-subscription-label">
         <source>global subscription</source>
+        <target>assinatura global</target>
         
       </trans-unit>
     </body>
