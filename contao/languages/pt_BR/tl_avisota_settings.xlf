@@ -3,10 +3,12 @@
     <body>
       <trans-unit id="tl_avisota_settings.avisota_subscription_cleanup.0">
         <source>Clean unconfirmed subscriptions</source>
+        <target>Limpeza de assinaturas não confirmadas</target>
         
       </trans-unit>
       <trans-unit id="tl_avisota_settings.avisota_subscription_cleanup.1">
         <source>Clean subscriptions that does not confirmed after certain days.</source>
+        <target>Assinaturas limpas que não foram confirmadas depois de alguns dias.</target>
         
       </trans-unit>
       <trans-unit id="tl_avisota_settings.avisota_subscription_cleanup_days.0">
@@ -19,6 +21,7 @@
       </trans-unit>
       <trans-unit id="tl_avisota_settings.subscription_legend">
         <source>Subscriptions</source>
+        <target>Assinaturas</target>
         
       </trans-unit>
     </body>
