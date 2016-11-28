@@ -18,7 +18,6 @@ namespace Avisota\Contao\Subscription;
 use Avisota\Contao\Subscription\Event\CleanSubscriptionEvent;
 use Contao\Doctrine\ORM\EntityHelper;
 use ContaoCommunityAlliance\Contao\Events\Cron\CronEvents;
-use Doctrine\ORM\Query;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

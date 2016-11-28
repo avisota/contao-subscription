@@ -465,7 +465,7 @@ class SubscriptionManager
      * @param Subscription|array $subscriptions One or more subscription instances to confirm.
      * @param null               $_
      * @param int                $options
-     * TODO what is $_
+     *                                          TODO what is $_
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.ShortVariable)
      * @SuppressWarnings(PHPMD.CamelCaseParameterName)
